@@ -1,0 +1,33 @@
+{
+    "name": "dd01/ec_system",
+    "type": "library",
+    "description": "",
+    "license": "",
+    "require": {
+        "php": ">=7.2.0",
+        "php-amqplib/php-amqplib": "~2.7.2",
+        "ext-json": "*",
+        "ext-bcmath": "*",
+        "ext-curl": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "ES\\Taobaoke\\": "EcSystem/taobaoke/src/",
+            "ES\\MQ\\": "EcSystem/MQ/src/",
+            "ES\\Response\\": "EcSystem/Response/src/",
+            "ES\\Net\\": "EcSystem/Net/src/",
+            "ES\\Log\\": "EcSystem/Log/src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ES\\Taobaoke\\TaobaokeServiceProvider",
+                "ES\\MQ\\Providers\\MQServiceProvider"
+            ],
+            "aliases": {
+                "Taobaoke": "ES\\Taobaoke\\Facades\\Taobaoke"
+            }
+        }
+    }
+}
